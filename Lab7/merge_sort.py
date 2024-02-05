@@ -1,18 +1,21 @@
 # Merge Sort
 
+
 def merge_sort(lst):
     if len(lst) <= 1:
         return lst
 
     mid = len(lst) // 2
 
-    left = lst[mid:]
-    right = lst[:mid]
+    left = lst[mid:]  # left half
+    right = lst[:mid]  # right half
 
+    # recursively sort both side
     left = merge_sort(left)
     right = merge_sort(right)
 
-    return merge(left, right)
+    return merge(left, right)  # finally merge both left and right half
+
 
 def merge(left, right):
     merged = []
@@ -30,8 +33,9 @@ def merge(left, right):
     merged.extend(right[right_idx:])
     return merged
 
+
 if __name__ == "__main__":
-    lst = [2,5,1,3,9,8,6,7]
+    lst = [2, 5, 1, 3, 9, 8, 6, 7]
     merged = merge_sort(lst)
     print("Input List: ", lst)
     print("Output List: ", merged)

@@ -1,14 +1,15 @@
 # Quick Sort
 
+
 def quick_sort(lst):
     if len(lst) <= 1:
         return lst
 
-    pivot = lst[len(lst) // 2]
+    pivot = lst[len(lst) // 2]  # choose the mid element as a pivot
 
-    left = [x for x in lst if x < pivot]
-    middle = [x for x in lst if x == pivot]
-    right = [x for x in lst if x > pivot]
+    left = [n for n in lst if n < pivot]
+    middle = [n for n in lst if n == pivot]
+    right = [n for n in lst if n > pivot]
 
     return quick_sort(left) + middle + quick_sort(right)
 

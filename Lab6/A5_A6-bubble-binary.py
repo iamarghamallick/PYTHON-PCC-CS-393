@@ -4,13 +4,15 @@
 
 # 6. Using question No. 5(A): Accept another number(P) to search the sorted list using binary search algorithm. If the search element is present in the list then print “Search successful” else print “Search unsuccessful”.
 
+
 def bubble_sort_descending(lst):
     n = len(lst)
-    for i in range(n-1):
-        for j in range(n-1-i):
-            if lst[j] < lst[j+1]:
-                lst[j], lst[j+1] = lst[j+1], lst[j]
+    for i in range(n - 1):
+        for j in range(n - 1 - i):
+            if lst[j] < lst[j + 1]:
+                lst[j], lst[j + 1] = lst[j + 1], lst[j]  # swap
     return lst
+
 
 def linear_search(lst, p):
     for n in lst:
@@ -22,17 +24,18 @@ def linear_search(lst, p):
 
 def binary_search(sorted_lst, p):
     first = 0
-    last = len(sorted_lst)-1
+    last = len(sorted_lst) - 1
     while first <= last:
-        mid = (first+last) // 2
+        mid = (first + last) // 2
         if sorted_lst[mid] == p:
             print("Search Successful")
             return
         elif sorted_lst[mid] < p:
-            last = mid-1
+            last = mid - 1
         else:
-            first = mid+1
+            first = mid + 1
     print("Search Unsuccesful")
+
 
 def main():
     lst = []
@@ -48,6 +51,7 @@ def main():
 
     p = int(input("Enter the element to search (using binary search): "))
     binary_search(sorted_lst, p)
+
 
 if __name__ == "__main__":
     main()

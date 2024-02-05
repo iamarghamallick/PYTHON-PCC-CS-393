@@ -1,5 +1,13 @@
 # Write a program to implement random access in a file.
 
+"""
+Function details
+1. tell() -> returns the current file position in a file stream.
+2. seek(n) -> change the file position to n-th
+3. read() -> reads and returns the whole file content as string
+4. read(n) -> reads and returns first n bytes of the file
+"""
+
 f = open("words.txt", "r")
 
 print("Before reading File pointer position:", f.tell())
